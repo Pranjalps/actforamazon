@@ -3,117 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
+	
     <title>Unity WebGL Player | ACT FOR AMAZON</title>
-	<style>
-      html {
-        box-sizing: border-box;
-      }
-      *, *:before, *:after {
-        box-sizing: inherit;
-      }
-      body {
-        margin: 0;
-        background: #444;
-      }
-      #gameContainer {
+	<script>
+	#unityContainer {
         width: 100vw;
         height: 100vh;
       }
-      canvas {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-      /* try to handle mobile dialog */
-      canvas + * {
-        z-index: 2;
-      }
-      .logo {
-          display: block;
-          max-width: 100vw;
-          max-height: 70vh;
-      }
-
-      .progress {
-          margin: 1.5em;
-          border: 1px solid white;
-          width: 50vw;
-          display: none;
-      }
-      .progress .full {
-          margin: 2px;
-          background: white;
-          height: 1em;
-          transform-origin: top left;
-      }
-
-      #loader {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .spinner,
-      .spinner:after {
-        border-radius: 50%;
-        width: 5em;
-        height: 5em;
-      }
-      .spinner {
-        margin: 10px;
-        font-size: 10px;
-        position: relative;
-        text-indent: -9999em;
-        border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-        border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-        border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-        border-left: 1.1em solid #ffffff;
-        transform: translateZ(0);
-        animation: spinner-spin 1.1s infinite linear;
-      }
-      @keyframes spinner-spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-    </style>
+	  </script>
     <script src="Build/UnityLoader.js"></script>
+	  <body>
+    <div id="unityContainer"></div>
+  </body>
     <script>
-      UnityLoader.instantiate("unityContainer", "Build/facebook.json");
+      UnityLoader.instantiate("unityContainer", "Build/actforamazon5.json");
     </script>
   </head>
-  <body>
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1370262859793113',
-      xfbml      : true,
-      version    : 'v4.0'
-    });
 
-    // ADD ADDITIONAL FACEBOOK CODE HERE
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-    <div id="unityContainer" style="width: 640px; height: 360px; margin: auto"></div>
-  </body>
 </html>
